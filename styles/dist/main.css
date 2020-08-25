@@ -347,8 +347,8 @@ footer .socialmedia-container i {
     text-decoration: line-through;
   }
   header nav .nav-options li a:active {
+    color: #060a2456;
     text-decoration: line-through;
-    color: #060a24 56%;
   }
 
   .landing-page {
