@@ -1,0 +1,529 @@
+$FontSizeXL: 64px;
+$FontSizeL: 48px;
+$FontSizeLarge: 36px;
+$FontSizeMedium: 16px;
+$FontSizeSmall: 14px;
+$primaryColor: #FFFFFF;
+$secondaryColor: #0000FF;
+$gradientParallelogram: #0000A3;
+$primaryFontColor: #060a24;
+$secondaryFontColor: #FFFFFF;
+$navResponsiveColor: #0000EC;
+$decorationNavColor: #00F3BB;
+$btnGradient: #0000FE, #00F0B8;
+$btnColor: #00F3BB;
+$FontFamily: "IBM Plex Sans", sans-serif;
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    color: $primaryFontColor; 
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    letter-spacing: 0; 
+}
+body {
+    font-family: "IBM Plex Mono", monospace;
+}
+h1, h2, p, .btn {
+    letter-spacing: 0;
+}
+header {
+    padding: 0 5%;
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 44px;
+        .logo {
+            width: 24px;
+        }
+        .navbar {
+            display: none;
+        }
+        .btn-nav {
+            display: inline;
+            .fa-bars {
+                font-size: 18px;
+            }
+            .fa-times {
+                font-size: 18px;
+                display: none;
+            }
+        }
+    }
+    @media (max-width: 952px) {
+    .nav-options {
+        display: none;
+        box-sizing: border-box;
+        width: 100%;
+        li {
+            height: 22.9%;
+            display: flex;
+            align-items: center;
+            a {
+                color: $secondaryFontColor;
+                font-size: $FontSizeMedium;
+                line-height: 28px;
+            }
+        }
+    }
+    .navbar:checked ~ .nav-options {
+        z-index: 1;
+        position: absolute;
+        top: 44px;
+        left: 0px;
+        padding-top: 16px;
+        display: block;
+        width: 100%;
+        background-color:$navResponsiveColor;
+        li {
+            margin-bottom: 24px;
+            margin-left: 5%;
+            a {
+                font-size: $FontSizeMedium;
+                color: $secondaryFontColor;
+                letter-spacing: 0;
+                line-height: 28px; 
+            }
+        }
+    }
+    .navbar:checked + .btn-nav {
+        .fa-bars {
+            display: none;
+        }
+        .fa-times {
+            display: block; 
+        }
+    }
+}
+}
+.landing-page {
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    h1 {
+        font-family: $FontFamily;
+        font-size: $FontSizeLarge;
+        line-height: 42px;
+        margin-top: 29px;
+        margin-bottom: 16px;
+        text-align: left;
+        font-weight: 300;
+        width: 80%;
+    }
+    .line-through {
+        text-decoration: line-through;
+    }
+    p { 
+        font-size: $FontSizeSmall;
+        line-height: 22px;
+        text-align: justify;
+    }
+    @media (max-width: 952px) {
+        h1:after {
+          content: "."; 
+        } 
+    }
+    .btn {
+        background: $btnColor;
+        font-size: medium;
+        text-align: center;
+        line-height: 24px;
+        margin: 13px 0px 24px;
+        padding: 10px 25px;
+        font-weight: 500;
+    }
+}
+.episodes {
+    position: relative;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    h2 {
+        font-family: $FontFamily;
+        font-size: $FontSizeLarge;
+        color: $secondaryFontColor;
+        line-height: 42px;
+        font-weight: 300;
+        padding: 0 5%;
+    }
+    .podcast-container {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        justify-content: center;
+        padding-bottom: 0.9%;
+        margin: 1.5rem 3.4% 0;
+        iframe {
+            width: 100%;
+            height: 164px;
+        }
+    }
+}
+.parallelogram-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transform: skewY(-5deg);
+    transform-origin: top right;
+    z-index: -1;
+    background-image: linear-gradient(225deg, $secondaryColor 0%, $gradientParallelogram 100%);
+}
+.us {
+    padding: 0 5%;
+    .us-container {
+        display: flex;
+        flex-direction: column; 
+        img {
+            width: 100%;
+            transform: translateY(-55px);
+        }
+        .text-container {
+            margin: 0.5% 0 54px;
+            h2 {
+                font-family: $FontFamily;
+                font-size: $FontSizeLarge;
+                line-height: 42px;
+                font-weight: 300;
+                width: 80%;
+                margin-bottom: 1%;
+            }
+            p {
+                font-weight: 500;
+                letter-spacing: 0;
+                line-height: 22px;
+                font-size: $FontSizeSmall;  
+            }
+        }
+    }
+}
+.interviews {
+    h2 {
+        font-family: $FontFamily;
+        font-size: $FontSizeLarge;
+        line-height: 42px;
+        font-weight: 500;
+        padding: 0 5%;
+        margin-bottom: 1%;
+      }
+    .galery {
+        display: flex;
+        flex-direction: column;
+        margin: 3% 0 0;
+        img {
+            width: 100%;
+        }
+    }
+}
+.topics {
+    padding: 0 5%;
+    h2 {
+        font-size: $FontSizeLarge;
+        font-family: $FontFamily;
+        line-height: 42px;
+        margin-top: 3rem;
+        font-weight: 100;
+        margin-bottom: 2rem;
+    }
+    .topics-container {
+        figure {
+            display: flex;
+            flex-direction: column;
+            align-self: flex-start;
+            margin: 49px 0;
+            figcaption {
+                margin-top: 13px;
+                font-family:$FontFamily;
+                font-size: 24px;
+                color: $primaryFontColor;
+                letter-spacing: 0;
+                text-align: center; 
+            }
+        }
+    }
+} 
+.news {
+    position: relative;
+    padding: 0 5% 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    .parallelogram-background {
+        height: 360px;
+    }
+    h2 {
+        font-family: $FontFamily;
+        padding-top: 4rem;
+        margin-bottom: 2rem;
+        font-size: $FontSizeLarge;
+        font-weight: 300;
+        color: $secondaryFontColor;
+        text-align: center;
+        line-height: 42px;
+        width: 80%; 
+    }
+    .btn {
+        background: $btnColor;
+        font-weight: 500;
+        font-size: medium;
+        text-align: center;
+        padding: 0.9%;
+        width: 100%;
+    }
+}
+footer {
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    height: 88px;
+    p {
+        padding-top: 24px;
+        text-align: center;
+        font-size: $FontSizeSmall;
+        color: $primaryFontColor;
+        letter-spacing: 0;
+        line-height: 22px;
+    }
+    .socialmedia-container {
+        display: flex;
+        justify-content: space-around;
+        margin: 5% 8.1%; 
+        i {
+            font-size: $FontSizeMedium; 
+        }
+    }
+}
+@media (min-width: 952px) {
+    * {
+        margin: 0;
+        padding: 0; 
+    }
+    body {
+        margin: 0;
+    }
+    header {
+        position: sticky;
+        top: 0;
+        padding: 0;
+        z-index: 3;
+        background-color: $primaryColor;
+        nav {
+            .logo {
+                width: 36px;
+            }
+            justify-content: space-between;
+            margin: 0 6.9%;
+            height: 80px;
+            .fa-bars {
+                display: none;
+            }
+            .nav-options {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                li {
+                    padding: 0;
+                    margin-left: 48px;
+                    a {
+                        font-size: $FontSizeMedium;
+                        color: $primaryFontColor;
+                        letter-spacing: 0;
+                        line-height: 28px;
+                    }
+                    a:hover {
+                        color:$decorationNavColor;
+                        text-decoration: line-through; 
+                    }
+                    a:active {
+                        text-decoration: line-through;
+                        color: $primaryFontColor 56%;
+                    }
+                }
+            }
+        }
+       
+    }
+    .landing-page {
+        margin-left: 13.9%;
+        padding: 3.1% 0 0;
+        h1 {
+            font-size: $FontSizeXL;
+            width: 100%; 
+            line-height: 84px;
+        }
+        h1:after {
+            content: ".";
+            color: #0000EC; 
+        }
+        p {
+            visibility: hidden;
+            width: 49.6%;
+            margin-bottom: 1.4%;
+        }
+        p:before {
+            font-size: $FontSizeMedium;
+            content: "El portal de podcasts que explora el mundo de la programación y la tecnología. Nuevos episodes, todos los jueves cada 15 días.";
+            visibility: visible; 
+        }
+        .btn {
+            width: 226px;
+            height: 56px;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px; 
+        }
+        .btn:hover {
+            color: $primaryColor;
+            background-image: linear-gradient(to left, $btnGradient); 
+        }
+    }
+    .episodes {
+        padding: 8.8% 6.9% 4.6% 6.9%;
+        display: block;
+        padding-top: 9.8%; 
+        padding-bottom: 2rem;
+        h2 {
+            margin: 0;
+            padding: 0;
+            margin-left: 9.1%;
+            font-size: $FontSizeL; 
+        }
+        .podcast-container {
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; 
+            iframe {
+                margin: 1.2%;
+                width: 44.9%;
+            }
+          }
+    }
+    .us {
+        padding: 0 12.8% 1.6% 16.8%;
+        
+        .us-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            img {
+                margin-right: 4.3%;
+                width: 45%;
+                transform: translateY(-27px);
+            }
+            .text-container {
+                margin: 0;
+                padding: 0;
+                h2 {
+                    font-size: $FontSizeL;
+                    margin-bottom: 24px; 
+                }
+                p {
+                    line-height: 24px;
+                    font-size: $FontSizeMedium;
+                    font-weight: 400;
+                    width: 94%;
+                }
+            }
+        }
+    }
+    .interviews {
+        h2 {
+            padding: 1.6% 0 0;
+            font-size: $FontSizeL;
+            margin-left: 13.9%;
+            margin-bottom: 36px; 
+        }
+        .galery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap; 
+            img {
+                width: calc(100%/3);
+                height: 100%;
+            }
+        }
+    }
+    .topics {
+        padding: 0;
+        h2 {
+            margin-left: 13.9%;
+            font-size: $FontSizeL;
+            margin-top: 2.6%;
+        }
+        .topics-container {
+            margin: 3.8% 16.3% 1%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            figure {
+                margin: 0;
+                figcaption {
+                    max-width: 220px; 
+                }
+            }
+        }
+    }
+    .news {
+        padding: 5.4% 20% 6.2%;
+        .parallelogram-background {
+            height: 800px; 
+        }
+        h2 {
+            font-size: $FontSizeL;
+            line-height: 62px;
+        }
+        a {
+            font-size: 18px;
+            padding: 16px 4.1%; 
+        }
+        .btn {
+            width: 24%;
+        }
+        .btn:hover {
+            color: white;
+            background-image: linear-gradient(to left, $btnGradient);
+        }
+    }
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row; 
+        p {
+            padding: 0;
+            margin-left: 6.9%;
+            font-size: $FontSizeMedium;
+            color:$primaryFontColor;
+            font-weight: 500; 
+            line-height: 28px;
+        }
+        .socialmedia-container {
+            margin: 0.8% 6.9% 0.9% 0; 
+            i {
+                margin-left: 2.86rem;
+                font-size: 18px;
+            }
+        }
+    }
+}
+    
+    
+      
