@@ -12,3 +12,7 @@ Project is created with:
 * Html
 * Css
 * Sass
+
+## Clone
+
+-Clone this repo to your local machine using `https://github.com/andrea2811/Podcast-Project.git`
